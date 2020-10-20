@@ -1,0 +1,30 @@
+<mvc:View controllerName="com.morroalto.MorroAlto.controller.MainMenu" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<subHeader>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<Title text="{i18n>MainMenu}" level="H3"/>
+						<ToolbarSpacer/>
+					</Toolbar>
+				</subHeader>
+				<content>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>main.maintenance.tile}"
+						subheader="{i18n>main.maintenance.tile.sub}" press="navToMaintenanceMenu">
+						<TileContent>
+							<ImageContent src="sap-icon://action-settings"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>main.report.tile}"
+						subheader="{i18n>main.report.tile.sub}" press="navToReportsMenu">
+						<TileContent>
+							<ImageContent src="sap-icon://expense-report"/>
+						</TileContent>
+					</GenericTile>					
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
