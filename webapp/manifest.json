@@ -14,7 +14,6 @@
 			"version": "1.40.12"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -30,13 +29,8 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "com.morroalto.MorroAlto.view.MainMenu",
@@ -70,6 +64,38 @@
 			"css": [{
 				"uri": "css/style.css"
 			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.morroalto.MorroAlto.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"async": true
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "MainMenu",
+				"target": "MainMenu"
+			}, {
+				"pattern": "manutencao",
+				"name": "MaintenanceMenu",
+				"target": "MaintenanceMenu"
+			}],
+			"targets": {
+				"MainMenu": {
+					"viewId": "app",
+					"viewName": "MainMenu",
+					"viewLevel" : 1
+				},
+				"MaintenanceMenu": {
+					"viewId": "maintenance",
+					"viewName": "MaintenanceMenu",
+					"viewLevel" : 2
+				}
+			}
 		}
 	}
 }

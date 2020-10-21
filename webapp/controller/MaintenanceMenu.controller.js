@@ -1,8 +1,9 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"com/morroalto/MorroAlto/controller/BaseController",
+	"sap/ui/core/routing/History"
+], function(BaseController, History) {
 	"use strict";
-	return Controller.extend("com.morroalto.MorroAlto.controller.MaintenanceMenuView", {
+	return BaseController.extend("com.morroalto.MorroAlto.controller.MaintenanceMenu", {
 
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
@@ -39,6 +40,17 @@ sap.ui.define([
 		//
 		//	}
 
+		handleNavBack: function() {
+			// var oHistory, sPreviousHash;
+			// oHistory = History.getInstance();
+			// sPreviousHash = oHistory.getPreviousHash();
+			// if (sPreviousHash !== undefined) {
+			//  	window.history.go(-1);
+			// } else {
+			//   var oRouter = this.getRouter();
+			//   oRouter.navTo("MainMenu", {}, true /*no history*/ );
+			// }
+			this.goBack("MainMenu");
+		}
 	});
-
 });
